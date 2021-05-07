@@ -7,15 +7,46 @@ namespace Tree
     class Tree
     {
         private Node root;
+        public Node temp;
 
-        public int add(x)
+        public void add(int x)
         {
-            x = new Node()
+            temp = root;
+            Node added = new Node();
+            added.number = x;
+            added.left = null;
+            added.right = null;
 
-
+            if (root == null)
+            {
+                root = added;
+            }
+            else
+            { 
+                if (added.number > temp.number)
+                {
+                    if (temp.right == null)
+                    {
+                        temp.right = added;
+                    }
+                    else
+                    {
+                        temp = temp.right;
+                    }
+                }
+                else
+                {
+                    if (temp.left == null)
+                    {
+                        temp.left = added;
+                    }
+                    else
+                    {
+                        temp = temp.left;
+                    }
+                }
+            }
         }
-
-
 
     }
 
