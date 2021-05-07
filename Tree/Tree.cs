@@ -8,26 +8,28 @@ namespace Tree
     {
         private Node root;
         public Node temp;
-
+           
         public void add(int x)
         {
+            bool added = false;
             temp = root;
-            Node added = new Node();
-            added.number = x;
-            added.left = null;
-            added.right = null;
+            Node adNo = new Node();
+            adNo.number = x;
+            adNo.left = null;
+            adNo.right = null;
 
             if (root == null)
             {
-                root = added;
+                root = adNo;
             }
             else
             { 
-                if (added.number > temp.number)
+                if (adNo.number > temp.number)
                 {
                     if (temp.right == null)
                     {
-                        temp.right = added;
+                        temp.right = adNo;
+                        added = true;
                     }
                     else
                     {
@@ -38,7 +40,8 @@ namespace Tree
                 {
                     if (temp.left == null)
                     {
-                        temp.left = added;
+                        temp.left = adNo;
+                        added = true;
                     }
                     else
                     {
