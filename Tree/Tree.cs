@@ -9,7 +9,7 @@ namespace Tree
         private Node root;
         public Node temp;
            
-        public void add(int x)
+        public void Add(int x)
         {
             bool added = false;
             temp = root;
@@ -50,7 +50,22 @@ namespace Tree
                 }
             }
         }
-
+        public void traverse(Node front)
+        {
+            if(front.left != null)
+            {
+                traverse(front.left);
+            }
+            Console.WriteLine(front.left);
+            if(front.right != null)
+            {
+                traverse(front.right);
+            }
+        }
+        public void traverse1()
+        {
+            traverse(root);
+        }
     }
 
 }
